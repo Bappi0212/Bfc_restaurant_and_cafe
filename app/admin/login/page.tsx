@@ -159,7 +159,7 @@ export default function AdminLogin() {
                   <input
                     required
                     type="email"
-                    placeholder="bfc@admin.com"
+                    placeholder="Enter your email"
                     value={email}
                     onChange={e => { setEmail(e.target.value); setError(""); }}
                     className="w-full bg-zinc-800/60 border border-white/10 text-white placeholder-zinc-600 rounded-xl pl-11 pr-4 py-3.5 text-sm focus:outline-none focus:border-red-500/50 focus:ring-2 focus:ring-red-500/10 transition-all"
@@ -214,32 +214,6 @@ export default function AdminLogin() {
               </button>
             </form>
 
-            {/* Divider */}
-            <div className="my-6 flex items-center gap-3">
-              <div className="flex-1 h-px bg-white/5" />
-              <span className="text-zinc-700 text-[10px] font-bold uppercase tracking-widest">Default Credentials</span>
-              <div className="flex-1 h-px bg-white/5" />
-            </div>
-
-            {/* Credential hints */}
-            <div className="space-y-2">
-              <button
-                type="button"
-                onClick={() => { setEmail("bfc@admin.com"); setPassword("adminpass1234"); setError(""); }}
-                className="w-full flex items-center justify-between bg-zinc-800/40 border border-white/5 hover:border-red-500/20 hover:bg-zinc-800/70 rounded-xl px-4 py-3 transition-all group cursor-pointer"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-red-600/20 rounded-lg flex items-center justify-center shrink-0">
-                    <span className="text-red-500 font-black text-xs">A</span>
-                  </div>
-                  <div className="text-left">
-                    <p className="text-white font-bold text-xs">BFC Administrator</p>
-                    <p className="text-zinc-600 text-[10px]">bfc@admin.com</p>
-                  </div>
-                </div>
-                <span className="text-zinc-600 group-hover:text-red-500 text-[10px] font-bold transition-colors">Autofill →</span>
-              </button>
-            </div>
           </div>
 
           {/* Footer */}

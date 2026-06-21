@@ -457,7 +457,7 @@ export default function AdminDashboard() {
                     <Cell key={entry.name} fill={STATUS_COLORS[entry.name] ?? "#9ca3af"} />
                   ))}
                 </Pie>
-                <Tooltip formatter={(v: number) => [`${v} orders`, ""]} contentStyle={{ borderRadius: "12px", border: "1px solid #f3f4f6", fontSize: "12px" }} />
+                <Tooltip formatter={(v) => [`${v ?? 0} orders`, ""]} contentStyle={{ borderRadius: "12px", border: "1px solid #f3f4f6", fontSize: "12px" }} />
                 <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: "11px", fontWeight: 700 }} />
               </PieChart>
             </ResponsiveContainer>
@@ -479,7 +479,7 @@ export default function AdminDashboard() {
               <XAxis dataKey="label" tick={{ fontSize: 11, fontWeight: 700, fill: "#9ca3af" }} axisLine={false} tickLine={false} />
               <YAxis tick={{ fontSize: 10, fill: "#9ca3af" }} axisLine={false} tickLine={false} />
               <Tooltip
-                formatter={(v: number, name: string) => [name === "Revenue" ? `$${v.toFixed(2)}` : v, name]}
+                formatter={(v, name) => [name === "Revenue" ? `$${Number(v ?? 0).toFixed(2)}` : v, name]}
                 contentStyle={{ borderRadius: "12px", border: "1px solid #f3f4f6", fontSize: "12px" }}
                 cursor={{ fill: "#f9fafb" }}
               />

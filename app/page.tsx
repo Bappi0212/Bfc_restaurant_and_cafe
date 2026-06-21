@@ -679,9 +679,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="border-t border-zinc-900 pt-7 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="border-t border-zinc-900 pt-7 flex items-center justify-center">
             <p className="text-zinc-700 text-xs">© 2026 BFC Restaurant & Cafe. All rights reserved.</p>
-            <Link href="/admin" className="text-zinc-700 hover:text-zinc-400 text-xs transition-colors">Admin Panel →</Link>
           </div>
         </div>
       </footer>

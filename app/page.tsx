@@ -17,30 +17,30 @@ const fallbackMenuItems = [
 
 type Slide = { id: number; badge: string; title: string; subtitle: string; description: string; cta_text: string; image_url: string; gradient: string };
 const fallbackSlides: Slide[] = [
-  { id: 1, badge: "Hot Deal",    title: "Signature\nFried Chicken",    subtitle: "20% Extra Pieces Today Only",      description: "Perfectly marinated, golden crispy and 100% fresh.",                              cta_text: "Order Now", image_url: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=1920&auto=format&fit=crop", gradient: "from-red-950/90 via-red-900/50" },
-  { id: 2, badge: "New Arrival", title: "Spicy Double\nZinger Burger", subtitle: "Loaded with Cheese & Secret Sauce", description: "A towering masterpiece of spicy, crunchy chicken and melted cheese.",       cta_text: "Try Now",   image_url: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1920&auto=format&fit=crop", gradient: "from-amber-950/90 via-amber-900/50" },
-  { id: 3, badge: "Best Combo",  title: "Fries & Drink\nCombo",        subtitle: "Only $2.50 — Limited Time Offer",  description: "Perfectly salted golden fries paired with a chilled refreshing drink.", cta_text: "Grab Deal", image_url: "https://images.unsplash.com/photo-1585109649139-366815a0d713?q=80&w=1920&auto=format&fit=crop", gradient: "from-orange-950/90 via-orange-900/50" },
+  { id: 1, badge: "Hot Deal", title: "Signature\nFried Chicken", subtitle: "20% Extra Pieces Today Only", description: "Perfectly marinated, golden crispy and 100% fresh.", cta_text: "Order Now", image_url: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=1920&auto=format&fit=crop", gradient: "from-red-950/90 via-red-900/50" },
+  { id: 2, badge: "New Arrival", title: "Spicy Double\nZinger Burger", subtitle: "Loaded with Cheese & Secret Sauce", description: "A towering masterpiece of spicy, crunchy chicken and melted cheese.", cta_text: "Try Now", image_url: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1920&auto=format&fit=crop", gradient: "from-amber-950/90 via-amber-900/50" },
+  { id: 3, badge: "Best Combo", title: "Fries & Drink\nCombo", subtitle: "Only $2.50 — Limited Time Offer", description: "Perfectly salted golden fries paired with a chilled refreshing drink.", cta_text: "Grab Deal", image_url: "https://images.unsplash.com/photo-1585109649139-366815a0d713?q=80&w=1920&auto=format&fit=crop", gradient: "from-orange-950/90 via-orange-900/50" },
 ];
 
 const categories = ["All", "Chicken", "Burger", "Snacks", "Drinks"];
 
 const testimonials = [
-  { name: "Rashed K.",   rating: 5, text: "The crispy chicken here is absolutely incredible. Best I've had in Sihanoukville! Service is always fast and staff are so friendly.", avatar: "R", color: "bg-red-600" },
-  { name: "Sofia M.",    rating: 5, text: "BFC is my go-to place every week. The zinger burger is out of this world and the fries are always perfectly crispy and hot.", avatar: "S", color: "bg-orange-500" },
-  { name: "David T.",    rating: 5, text: "Amazing food, great service, and unbeatable prices. I order from here at least twice a week — always reliable and delicious.", avatar: "D", color: "bg-blue-600" },
-  { name: "Mina L.",     rating: 5, text: "Best fried chicken in town, no contest! The portions are huge and prices are so affordable. I bring my family here every weekend.", avatar: "M", color: "bg-violet-600" },
-  { name: "Kevin P.",    rating: 5, text: "Honestly the nuggets here are better than any fast food chain. Crispy outside, juicy inside — perfectly seasoned every single time.", avatar: "K", color: "bg-emerald-600" },
-  { name: "Anya R.",     rating: 5, text: "The delivery is super fast and the food always arrives hot. The spicy zinger is my favourite — so much flavour in every bite!", avatar: "A", color: "bg-pink-600" },
-  { name: "James W.",    rating: 5, text: "Came in for a quick lunch and ended up ordering twice. The combo meal is insane value for money. Will definitely be back!", avatar: "J", color: "bg-amber-600" },
-  { name: "Priya S.",    rating: 5, text: "I was craving fried chicken at midnight and BFC was still open. Fresh food, kind staff — this place never disappoints me.", avatar: "P", color: "bg-cyan-600" },
-  { name: "Tom H.",      rating: 5, text: "The shake here is thick, creamy and absolutely delicious. My kids refuse to eat anywhere else now. BFC has ruined us!", avatar: "T", color: "bg-rose-600" },
+  { name: "Rashed K.", rating: 5, text: "The crispy chicken here is absolutely incredible. Best I've had in Sihanoukville! Service is always fast and staff are so friendly.", avatar: "R", color: "bg-red-600" },
+  { name: "Sofia M.", rating: 5, text: "BFC is my go-to place every week. The zinger burger is out of this world and the fries are always perfectly crispy and hot.", avatar: "S", color: "bg-orange-500" },
+  { name: "David T.", rating: 5, text: "Amazing food, great service, and unbeatable prices. I order from here at least twice a week — always reliable and delicious.", avatar: "D", color: "bg-blue-600" },
+  { name: "Mina L.", rating: 5, text: "Best fried chicken in town, no contest! The portions are huge and prices are so affordable. I bring my family here every weekend.", avatar: "M", color: "bg-violet-600" },
+  { name: "Kevin P.", rating: 5, text: "Honestly the nuggets here are better than any fast food chain. Crispy outside, juicy inside — perfectly seasoned every single time.", avatar: "K", color: "bg-emerald-600" },
+  { name: "Anya R.", rating: 5, text: "The delivery is super fast and the food always arrives hot. The spicy zinger is my favourite — so much flavour in every bite!", avatar: "A", color: "bg-pink-600" },
+  { name: "James W.", rating: 5, text: "Came in for a quick lunch and ended up ordering twice. The combo meal is insane value for money. Will definitely be back!", avatar: "J", color: "bg-amber-600" },
+  { name: "Priya S.", rating: 5, text: "I was craving fried chicken at midnight and BFC was still open. Fresh food, kind staff — this place never disappoints me.", avatar: "P", color: "bg-cyan-600" },
+  { name: "Tom H.", rating: 5, text: "The shake here is thick, creamy and absolutely delicious. My kids refuse to eat anywhere else now. BFC has ruined us!", avatar: "T", color: "bg-rose-600" },
 ];
 
 type Deal = { id: number; title: string; description: string; price: string; badge: string; gradient: string };
 const fallbackDeals: Deal[] = [
-  { id: 1, title: "Family Feast",  description: "4 pcs chicken + 2 burgers + 4 drinks", price: "$14.99", badge: "Save 30%",  gradient: "from-red-600 to-red-800" },
-  { id: 2, title: "Lunch Special", description: "1 burger + large fries + cold drink",   price: "$5.50",  badge: "11am–3pm",  gradient: "from-orange-500 to-orange-700" },
-  { id: 3, title: "Party Pack",    description: "10 pcs chicken + 5 fries + 5 drinks",   price: "$24.99", badge: "Best Value", gradient: "from-zinc-800 to-zinc-950" },
+  { id: 1, title: "Family Feast", description: "4 pcs chicken + 2 burgers + 4 drinks", price: "$14.99", badge: "Save 30%", gradient: "from-red-600 to-red-800" },
+  { id: 2, title: "Lunch Special", description: "1 burger + large fries + cold drink", price: "$5.50", badge: "11am–3pm", gradient: "from-orange-500 to-orange-700" },
+  { id: 3, title: "Party Pack", description: "10 pcs chicken + 5 fries + 5 drinks", price: "$24.99", badge: "Best Value", gradient: "from-zinc-800 to-zinc-950" },
 ];
 
 type MenuItem = { id: number; name: string; category: string; price: string; numericPrice: number; image: string; desc: string; discount?: number | null };
@@ -75,20 +75,20 @@ export default function Home() {
       try {
         const { data, error } = await supabase.from("products").select("*").order("id", { ascending: true });
         if (!error && data && data.length > 0) setMenuItems(data);
-      } catch (_) {}
+      } catch (_) { }
       setMenuLoading(false);
     }
     async function fetchDeals() {
       try {
         const { data, error } = await supabase.from("special_deals").select("*").eq("is_active", true).order("sort_order", { ascending: true });
         if (!error && data && data.length > 0) setDeals(data);
-      } catch (_) {}
+      } catch (_) { }
     }
     async function fetchSlides() {
       try {
         const { data, error } = await supabase.from("hero_slides").select("*").eq("is_active", true).order("sort_order", { ascending: true });
         if (!error && data && data.length > 0) setSlides(data);
-      } catch (_) {}
+      } catch (_) { }
     }
     fetchMenu();
     fetchDeals();
@@ -543,7 +543,7 @@ export default function Home() {
               {/* Address */}
               <div className="rounded-2xl border border-white/8 p-6 flex items-start gap-4" style={{ background: "rgba(255,255,255,0.04)" }}>
                 <div className="w-10 h-10 rounded-xl bg-red-600/20 border border-red-600/20 flex items-center justify-center shrink-0 mt-0.5">
-                  <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 </div>
                 <div>
                   <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-1">Our Location</p>
@@ -555,7 +555,7 @@ export default function Home() {
               {/* Phone */}
               <div className="rounded-2xl border border-white/8 p-6 flex items-start gap-4" style={{ background: "rgba(255,255,255,0.04)" }}>
                 <div className="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-600/20 flex items-center justify-center shrink-0 mt-0.5">
-                  <svg className="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                  <svg className="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                 </div>
                 <div>
                   <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-1">Hotline & Booking</p>
@@ -567,12 +567,12 @@ export default function Home() {
               {/* Hours */}
               <div className="rounded-2xl border border-emerald-500/20 p-6 flex items-start gap-4" style={{ background: "rgba(16,185,129,0.06)" }}>
                 <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5">
-                  <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 </div>
                 <div>
                   <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-2">Opening Hours</p>
                   <div className="flex items-center gap-2">
-                    <span className="relative flex h-2.5 w-2.5"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"/><span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"/></span>
+                    <span className="relative flex h-2.5 w-2.5"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" /><span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" /></span>
                     <span className="text-emerald-400 font-black text-sm">Open 24 Hours · 7 Days a Week</span>
                   </div>
                   <p className="text-zinc-600 text-xs mt-1">We never close. Come anytime.</p>
@@ -584,16 +584,16 @@ export default function Home() {
                 <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest mb-4">Follow Us</p>
                 <div className="flex gap-3">
                   <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="group w-10 h-10 bg-blue-600/20 border border-blue-600/30 hover:bg-blue-600 rounded-xl flex items-center justify-center text-blue-400 hover:text-white transition-all active:scale-90">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
                   </a>
                   <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group w-10 h-10 bg-pink-600/20 border border-pink-600/30 hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 rounded-xl flex items-center justify-center text-pink-400 hover:text-white transition-all active:scale-90">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
                   </a>
                   <a href="https://t.me/bfc360restaurant" target="_blank" rel="noopener noreferrer" className="group w-10 h-10 bg-sky-500/20 border border-sky-500/30 hover:bg-sky-500 rounded-xl flex items-center justify-center text-sky-400 hover:text-white transition-all active:scale-90">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" /></svg>
                   </a>
                   <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="group w-10 h-10 bg-white/10 border border-white/15 hover:bg-white rounded-xl flex items-center justify-center text-zinc-400 hover:text-zinc-900 transition-all active:scale-90">
-                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.264 5.638 5.9-5.638zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.264 5.638 5.9-5.638zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
                   </a>
                 </div>
               </div>
@@ -638,7 +638,7 @@ export default function Home() {
                   <textarea required rows={4} placeholder="Tell us how we can help you..." className="w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-red-500/60 focus:bg-white/8 transition-all resize-none" />
                 </div>
                 <button type="submit" className="w-full py-4 bg-red-600 hover:bg-red-700 text-white font-black text-sm uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-red-600/20 active:scale-[0.98] flex items-center justify-center gap-2">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
                   Send Message
                 </button>
               </form>
@@ -887,7 +887,7 @@ export default function Home() {
       >
         {/* Telegram icon */}
         <svg className="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+          <path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
         </svg>
         {/* Label — expands on hover */}
         <span className="max-w-0 group-hover:max-w-[120px] overflow-hidden whitespace-nowrap text-sm font-black transition-all duration-300 ease-out">

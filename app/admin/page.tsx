@@ -4,6 +4,10 @@ import { useEffect, useState, useMemo } from "react";
 import Link from "next/link";
 import { supabase } from "@/app/lib/supabase";
 import Pagination from "./components/Pagination";
+import {
+  PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer,
+  BarChart, Bar, XAxis, YAxis, CartesianGrid,
+} from "recharts";
 
 type Order = {
   id: number;
@@ -139,6 +143,29 @@ export default function AdminDashboard() {
   }), [filteredOrders]);
 
   const activeLabel = filterLabel(filter, customStart, customEnd);
+
+  const STATUS_COLORS: Record<string, string> = {
+    Pending: "#f59e0b", Preparing: "#3b82f6", Ready: "#8b5cf6", Delivered: "#10b981", Cancelled: "#ef4444",
+  };
+
+  const statusChartData = useMemo(() => {
+    const counts: Record<string, number> = { Pending: 0, Preparing: 0, Ready: 0, Delivered: 0, Cancelled: 0 };
+    filteredOrders.forEach(o => { if (o.status in counts) counts[o.status]++; });
+    return Object.entries(counts).filter(([, v]) => v > 0).map(([name, value]) => ({ name, value }));
+  }, [filteredOrders]);
+
+  const dailyRevenueData = useMemo(() => {
+    const days = [];
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date();
+      d.setDate(d.getDate() - i);
+      const dateStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+      const label = d.toLocaleDateString("en-US", { weekday: "short" });
+      const dayOrders = allOrders.filter(o => o.created_at.startsWith(dateStr) && o.status !== "Cancelled");
+      days.push({ label, Revenue: parseFloat(dayOrders.reduce((s, o) => s + Number(o.total_amount), 0).toFixed(2)), Orders: dayOrders.length });
+    }
+    return days;
+  }, [allOrders]);
 
   // ── PDF GENERATOR ──────────────────────────────────────────────────────────
   const generatePDF = () => {
@@ -399,6 +426,70 @@ export default function AdminDashboard() {
             </div>
           </Link>
         ))}
+      </div>
+
+      {/* Charts */}
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-5 mb-8">
+
+        {/* Donut — Order Status Breakdown */}
+        <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+          <div className="mb-4">
+            <p className="text-[10px] font-black text-gray-400 uppercase tracking-wider">Order Status</p>
+            <p className="text-sm font-bold text-gray-900 mt-0.5">Breakdown by status</p>
+          </div>
+          {statusChartData.length === 0 ? (
+            <div className="h-52 flex items-center justify-center text-gray-300 text-sm">No data</div>
+          ) : (
+            <ResponsiveContainer width="100%" height={220}>
+              <PieChart>
+                <Pie
+                  data={statusChartData}
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={58}
+                  outerRadius={88}
+                  paddingAngle={3}
+                  dataKey="value"
+                  label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                  labelLine={false}
+                >
+                  {statusChartData.map((entry) => (
+                    <Cell key={entry.name} fill={STATUS_COLORS[entry.name] ?? "#9ca3af"} />
+                  ))}
+                </Pie>
+                <Tooltip formatter={(v: number) => [`${v} orders`, ""]} contentStyle={{ borderRadius: "12px", border: "1px solid #f3f4f6", fontSize: "12px" }} />
+                <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: "11px", fontWeight: 700 }} />
+              </PieChart>
+            </ResponsiveContainer>
+          )}
+        </div>
+
+        {/* Bar — Daily Revenue (last 7 days) */}
+        <div className="lg:col-span-3 bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+          <div className="mb-4 flex items-start justify-between">
+            <div>
+              <p className="text-[10px] font-black text-gray-400 uppercase tracking-wider">Revenue</p>
+              <p className="text-sm font-bold text-gray-900 mt-0.5">Last 7 days</p>
+            </div>
+            <span className="text-[10px] font-black text-emerald-600 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-lg">This Week</span>
+          </div>
+          <ResponsiveContainer width="100%" height={220}>
+            <BarChart data={dailyRevenueData} barSize={28} margin={{ top: 4, right: 4, left: -20, bottom: 0 }}>
+              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f3f4f6" />
+              <XAxis dataKey="label" tick={{ fontSize: 11, fontWeight: 700, fill: "#9ca3af" }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fontSize: 10, fill: "#9ca3af" }} axisLine={false} tickLine={false} />
+              <Tooltip
+                formatter={(v: number, name: string) => [name === "Revenue" ? `$${v.toFixed(2)}` : v, name]}
+                contentStyle={{ borderRadius: "12px", border: "1px solid #f3f4f6", fontSize: "12px" }}
+                cursor={{ fill: "#f9fafb" }}
+              />
+              <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: "11px", fontWeight: 700 }} />
+              <Bar dataKey="Revenue" fill="#dc2626" radius={[6, 6, 0, 0]} />
+              <Bar dataKey="Orders" fill="#1f2937" radius={[6, 6, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+
       </div>
 
       {/* Recent Orders Table */}

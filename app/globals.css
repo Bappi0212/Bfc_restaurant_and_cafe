@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Class-based dark mode for Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -12,15 +15,67 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ─── DARK MODE GLOBAL OVERRIDES ─────────────────────────────────────────── */
+/* These override common Tailwind color utilities when .dark is on <html>,
+   eliminating the need to add dark: to every single element. */
+
+html.dark {
+  color-scheme: dark;
+  --background: #0c0c0e;
+  --foreground: #f4f4f5;
+}
+
+/* Backgrounds */
+.dark .bg-white          { background-color: #18181b !important; }
+.dark .bg-gray-50        { background-color: #101012 !important; }
+.dark .bg-gray-100       { background-color: #27272a !important; }
+.dark .bg-gray-200       { background-color: #3f3f46 !important; }
+
+/* Text */
+.dark .text-gray-900     { color: #f4f4f5 !important; }
+.dark .text-gray-800     { color: #e4e4e7 !important; }
+.dark .text-gray-700     { color: #d4d4d8 !important; }
+.dark .text-gray-600     { color: #a1a1aa !important; }
+.dark .text-gray-500     { color: #71717a !important; }
+.dark .text-gray-400     { color: #52525b !important; }
+
+/* Borders */
+.dark .border-gray-100   { border-color: #27272a !important; }
+.dark .border-gray-200   { border-color: #3f3f46 !important; }
+.dark .border-gray-300   { border-color: #52525b !important; }
+
+/* Hover states that use gray bg */
+.dark .hover\:bg-gray-50:hover  { background-color: #27272a !important; }
+.dark .hover\:bg-gray-100:hover { background-color: #3f3f46 !important; }
+
+/* Divide lines */
+.dark .divide-gray-50 > * + *  { border-color: #27272a !important; }
+.dark .divide-gray-100 > * + * { border-color: #27272a !important; }
+
+/* Form inputs — override placeholder + bg */
+.dark input:not([class*="bg-"]),
+.dark textarea:not([class*="bg-"]),
+.dark select:not([class*="bg-"]) {
+  background-color: #27272a;
+  color: #f4f4f5;
+  border-color: #3f3f46;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #52525b;
+}
+
+/* Animate-pulse skeleton in dark mode */
+.dark .animate-pulse { background-color: #27272a !important; }
+
+/* Shadow adjustments */
+.dark .shadow-sm  { --tw-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+.dark .shadow-md  { --tw-shadow: 0 4px 6px rgba(0,0,0,0.5); }
+.dark .shadow-lg  { --tw-shadow: 0 10px 15px rgba(0,0,0,0.5); }

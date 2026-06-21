@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+import ThemeToggle from "@/app/components/ThemeToggle";
 
 const navItems = [
   { name: "Dashboard",    path: "/admin",           icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
@@ -142,10 +143,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       </aside>
 
       {/* Main content */}
-      <main className="flex-1 flex flex-col min-w-0 overflow-hidden bg-gray-50">
+      <main className="flex-1 flex flex-col min-w-0 overflow-hidden bg-gray-50 dark:bg-zinc-900">
 
         {/* Topbar */}
-        <header className="bg-white border-b border-gray-100 h-16 flex items-center justify-between px-4 md:px-8 shrink-0 sticky top-0 z-30 shadow-sm shadow-black/[0.02]">
+        <header className="bg-white dark:bg-zinc-800 border-b border-gray-100 dark:border-zinc-700/60 h-16 flex items-center justify-between px-4 md:px-8 shrink-0 sticky top-0 z-30 shadow-sm shadow-black/[0.02]">
           <div className="flex items-center gap-3">
             <button className="md:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-xl transition-colors" onClick={() => setIsMobileMenuOpen(true)}>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
@@ -161,6 +162,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </div>
 
           <div className="flex items-center gap-3">
+            <ThemeToggle className="text-gray-500 dark:text-zinc-400 hover:bg-gray-100 dark:hover:bg-zinc-700 border border-gray-200 dark:border-zinc-600" />
+
             <Link href="/" target="_blank" className="hidden md:flex items-center gap-1.5 text-xs font-semibold text-gray-500 hover:text-red-600 transition-colors bg-gray-50 hover:bg-red-50 px-3 py-1.5 rounded-lg border border-gray-200 hover:border-red-100">
               View User Panel
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>

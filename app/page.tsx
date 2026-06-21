@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { supabase } from "@/app/lib/supabase";
+import ThemeToggle from "./components/ThemeToggle";
 
 const fallbackMenuItems = [
   { id: 1, name: "Crispy Fried Chicken (2pcs)", category: "Chicken", price: "$2.20", numericPrice: 2.20, image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=600&auto=format&fit=crop", desc: "Golden, crunchy, and juicy inside." },
@@ -193,7 +194,7 @@ export default function Home() {
   const bannerOffset = promoBanner ? "top-8" : "top-0";
 
   return (
-    <main className="min-h-screen bg-[#F8F9FA] text-gray-900 overflow-x-hidden">
+    <main className="min-h-screen bg-[#F8F9FA] dark:bg-zinc-950 text-gray-900 dark:text-zinc-100 overflow-x-hidden">
 
       {/* Promo Banner */}
       {promoBanner && (
@@ -204,7 +205,7 @@ export default function Home() {
       )}
 
       {/* Navbar */}
-      <nav className={`fixed ${bannerOffset} left-0 w-full z-[80] transition-all duration-500 ${scrolled ? "bg-white/90 backdrop-blur-2xl shadow-lg shadow-black/5 border-b border-gray-100/80 py-3" : "bg-transparent py-5"}`}>
+      <nav className={`fixed ${bannerOffset} left-0 w-full z-[80] transition-all duration-500 ${scrolled ? "bg-white/90 dark:bg-zinc-900/95 backdrop-blur-2xl shadow-lg shadow-black/5 dark:shadow-black/30 border-b border-gray-100/80 dark:border-zinc-800 py-3" : "bg-transparent py-5"}`}>
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between gap-3">
           <button onClick={() => setIsMobileNavOpen(true)} className="p-2 bg-white/80 backdrop-blur-md rounded-xl border border-gray-200/60 text-gray-700 md:hidden active:scale-95 transition-transform shadow-sm">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
@@ -224,6 +225,8 @@ export default function Home() {
             <button onClick={() => scrollTo("menu-section")} className="hover:text-red-600 transition-colors">Menu</button>
             <button onClick={() => scrollTo("contact")} className="hover:text-red-600 transition-colors">Contact</button>
           </div>
+
+          <ThemeToggle className="text-gray-600 dark:text-zinc-400 hover:bg-gray-100 dark:hover:bg-zinc-800 border border-gray-200 dark:border-zinc-700" />
 
           <button onClick={() => setIsCartOpen(true)} className="relative p-2.5 bg-white rounded-full border border-gray-100 text-gray-700 hover:text-red-600 hover:border-red-100 transition-all shadow-sm active:scale-95 group">
             <svg className="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
@@ -417,7 +420,7 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section id="about" className="py-20 md:py-28 bg-[#F8F9FA]">
+      <section id="about" className="py-20 md:py-28 bg-[#F8F9FA] dark:bg-zinc-900">
         <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl h-80 md:h-[500px]">
